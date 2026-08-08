@@ -18,12 +18,7 @@ app = FastAPI(title="Bedtime Story Generator")
 # Render-deployed backend without per-domain configuration. Tighten to your
 # actual Vercel domain in production:
 #     allow_origins=["https://bedtime-story.vercel.app"]
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
 @app.post("/story", response_model=StoryResponse)
